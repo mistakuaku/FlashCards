@@ -1,0 +1,30 @@
+* {
+  box-sizing: border-box;
+}
+
+.row::after{
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.col {
+  width: 16.67%;
+  float: left;
+  padding: 15px;
+  border: 1px solid black;
+}
+
+.col2{
+  width: 66.66%;
+  float: left;
+  padding: 15px;
+  border: 1px solid black;
+}
+
+.header{
+  border: 1px solid black;
+  padding: 15px;
+}
+/*The above code is inspired by W3Schools Responsive Grid Layout
+Found here:https://www.w3schools.com/css/css_rwd_grid.asp */
