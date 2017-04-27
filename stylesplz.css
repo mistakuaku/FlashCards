@@ -12,7 +12,7 @@
   width: 16.67%;
   float: left;
   padding: 15px;
-  border: 1px solid black;
+  //border: 1px solid black;
 }
 
 .col2{
@@ -26,5 +26,6 @@
   border: 1px solid black;
   padding: 15px;
 }
+
 /*The above code is inspired by W3Schools Responsive Grid Layout
 Found here:https://www.w3schools.com/css/css_rwd_grid.asp */
