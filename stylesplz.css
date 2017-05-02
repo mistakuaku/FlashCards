@@ -33,6 +33,13 @@
 /*The above code is inspired by W3Schools Responsive Grid Layout
 Found here:https://www.w3schools.com/css/css_rwd_grid.asp */
 
+.button {
+  padding: 15px 32px;
+  display: inline-block;
+  font-size: 16px;
+}
+
+
 @media only screen and (max-width: 1000px){
   .col {
     width: 100%;
@@ -48,3 +55,7 @@ Found here:https://www.w3schools.com/css/css_rwd_grid.asp */
   }
 
 }
+
+/*The above code is inspired by W3schools responsive gallery
+Found here:
+https://www.w3schools.com/css/tryit.asp?filename=trycss_image_gallery_responsive */
