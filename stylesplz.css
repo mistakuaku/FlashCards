@@ -30,13 +30,13 @@ Found here:https://www.w3schools.com/css/css_rwd_grid.asp */
 
 @media only screen and (max-width: 1000px){
   .col {
-    width: 16.67%;
+    width: 100%;
     float: left;
     padding: 15px;
   }
 
   .col2{
-    width: 66.66%;
+    width: 100%;
     float: left;
     padding: 15px;
     border: 1px solid black;
