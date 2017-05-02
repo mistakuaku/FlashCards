@@ -54,6 +54,12 @@ Found here:https://www.w3schools.com/css/css_rwd_grid.asp */
     border: 1px solid black;
   }
 
+  .button {
+    padding: 50px 106px;
+    display: inline-block;
+    font-size: 32px;
+  }
+
 }
 
 /*The above code is inspired by W3schools responsive gallery
