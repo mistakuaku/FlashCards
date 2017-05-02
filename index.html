@@ -7,15 +7,30 @@
     <script src="scriptplz.js"> </script>
   </head>
 
-  <body>
+  <body onload="shuffleCards()">
 
   <div>
-    <div class="header"><h1>Title</h1></div>
+    <div class="header"><h1 align="center">Guess Who</h1></div>
+
     <div class="row">
       <div class="col"></div>
-      <div class="col2"></div>
+      <div class="col2">
+        <img src="" id="cardImage" alt="" height="300" width="300">
+        <p id="cardName"></p>
+      </div>
       <div class="col"></div>
     </div>
+
+    <br>
+
+    <div class="row">
+      <div class="col"></div>
+      <div class="col2">
+        <button type="button">Check</button>
+        &nbsp;<button type="button" onclick="shuffleCards()">Next</button>
+      </div>
+    </div>
+
   </div>
 
   </body>
