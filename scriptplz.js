@@ -75,8 +75,11 @@ function flipCard()
 {
   document.getElementById("cardImage").className = "animateImg";
   document.getElementById("next").disabled = true;
+  //the button gets disabled to prevent problems with the picture not showing
+  //if the user clicks next before the timeouts are finished
   setTimeout(myTimeout, 1100);
   setTimeout(myOtherTimeout, 3000);
+  //I'm using timeouts to delay these functions so animation looks more natural
 }
 
 function myTimeout()

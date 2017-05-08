@@ -18,14 +18,13 @@
   width: 33.33%;
   float: left;
   padding: 15px;
-  border: 1px solid black;
+  //border: 1px solid black;
   position: relative;
 }
 
 .col2 img {
   height: auto;
   width: 100%;
-  border: 1px solid black;
 }
 
 .header{
@@ -36,17 +35,17 @@
 Found here:https://www.w3schools.com/css/css_rwd_grid.asp */
 
 .button {
-  padding: 15px 32px;
+  padding: 15px 125px;
   display: inline-block;
   font-size: 16px;
 }
 
 .centerText {
   position: absolute;
-  top: 45%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  top: 40%;
+  left: 48%;
   visibility: hidden;
+  font-size: 40px;
 }
 /*Inspired by W3Schools Image text found here:
 https://www.w3schools.com/css/tryit.asp?filename=trycss_image_text_center2 */
@@ -60,6 +59,7 @@ https://www.w3schools.com/css/tryit.asp?filename=trycss_image_text_center2 */
 @keyframes flipCard {
   to {transform: rotateY(180deg);}
 }
+
 
 @media only screen and (max-width: 1000px){
   .col {
@@ -77,7 +77,7 @@ https://www.w3schools.com/css/tryit.asp?filename=trycss_image_text_center2 */
   }
 
   .button {
-    padding: 50px 106px;
+    padding: 50px 155px;
     display: inline-block;
     font-size: 50px;
   }
@@ -86,8 +86,8 @@ https://www.w3schools.com/css/tryit.asp?filename=trycss_image_text_center2 */
     position: absolute;
     top: 60%;
     left: 50%;
-    transform: translate(-50%, -50%);
     visibility: hidden;
+    font-size: 50px;
   }
 
 }
