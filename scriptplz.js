@@ -55,6 +55,7 @@ function shuffleCards()
   document.getElementById("cardName").style.visibility = "hidden";
   document.getElementById("cardImage").style.opacity = "1";
   document.getElementById("cardImage").className = "";
+  document.getElementById("flip").disabled = false;
 
   var len = flashcardDeck.length;
   var randInt = Math.floor(Math.random() * len);
@@ -75,7 +76,8 @@ function flipCard()
 {
   document.getElementById("cardImage").className = "animateImg";
   document.getElementById("next").disabled = true;
-  //the button gets disabled to prevent problems with the picture not showing
+  document.getElementById("flip").disabled = true;
+  //the buttons gets disabled to prevent problems with the picture not showing
   //if the user clicks next before the timeouts are finished
   setTimeout(myTimeout, 1100);
   setTimeout(myOtherTimeout, 3000);
