@@ -15,9 +15,9 @@
     <div class="row">
       <div class="col"></div>
       <div class="col2">
-        <img src="" id="cardImage" alt="" height="300" width="300">
-        <p id="cardName"></p>
+        <img src="" id="cardImage" class="" alt="" height="300" width="300">
       </div>
+      <div class="centerText"  id="cardName"><p id="name">Name</p></div>
       <div class="col"></div>
     </div>
 
@@ -26,8 +26,8 @@
     <div class="row">
       <div class="col"></div>
       <div class="col2">
-        <button class="button">Check</button>
-        &nbsp;<button class="button" onclick="shuffleCards()">Next</button>
+        <button class="button" onclick="flipCard()">Check</button>
+        &nbsp;<button id="next" class="button" onclick="shuffleCards()">Next</button>
       </div>
     </div>
 

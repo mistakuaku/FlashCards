@@ -52,6 +52,10 @@ var currentCard;
 
 function shuffleCards()
 {
+  document.getElementById("cardName").style.visibility = "hidden";
+  document.getElementById("cardImage").style.opacity = "1";
+  document.getElementById("cardImage").className = "";
+
   var len = flashcardDeck.length;
   var randInt = Math.floor(Math.random() * len);
 
@@ -65,4 +69,25 @@ function shuffleCards()
   document.getElementById("cardImage").alt = flashcardDeck[randInt].name;
   //don't go cheating now with the alt text. It only works against yourself ;)
 
+}
+
+function flipCard()
+{
+  document.getElementById("cardImage").className = "animateImg";
+  document.getElementById("next").disabled = true;
+  setTimeout(myTimeout, 1100);
+  setTimeout(myOtherTimeout, 3000);
+}
+
+function myTimeout()
+{
+  var currentName = flashcardDeck[currentCard].name;
+  document.getElementById("name").innerHTML = currentName;
+  document.getElementById("cardName").style.visibility = "visible";
+}
+
+function myOtherTimeout()
+{
+  document.getElementById("cardImage").style.opacity = "0";
+  document.getElementById("next").disabled = false;
 }

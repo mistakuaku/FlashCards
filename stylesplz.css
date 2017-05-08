@@ -19,11 +19,13 @@
   float: left;
   padding: 15px;
   border: 1px solid black;
+  position: relative;
 }
 
 .col2 img {
   height: auto;
   width: 100%;
+  border: 1px solid black;
 }
 
 .header{
@@ -39,6 +41,25 @@ Found here:https://www.w3schools.com/css/css_rwd_grid.asp */
   font-size: 16px;
 }
 
+.centerText {
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  visibility: hidden;
+}
+/*Inspired by W3Schools Image text found here:
+https://www.w3schools.com/css/tryit.asp?filename=trycss_image_text_center2 */
+
+.animateImg {
+  animation-name: flipCard;
+  animation-duration: 4s;
+  backface-visibility: hidden;
+}
+
+@keyframes flipCard {
+  to {transform: rotateY(180deg);}
+}
 
 @media only screen and (max-width: 1000px){
   .col {
@@ -52,12 +73,21 @@ Found here:https://www.w3schools.com/css/css_rwd_grid.asp */
     float: left;
     padding: 15px;
     border: 1px solid black;
+    position: relative;
   }
 
   .button {
     padding: 50px 106px;
     display: inline-block;
     font-size: 50px;
+  }
+
+  .centerText {
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    visibility: hidden;
   }
 
 }
