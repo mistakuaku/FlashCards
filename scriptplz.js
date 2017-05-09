@@ -57,6 +57,20 @@ function shuffleCards()
   document.getElementById("cardImage").className = ""; //reset animation
   document.getElementById("flip").disabled = false; //reset clickability of flip
 
+  document.getElementById("a1Label").style.backgroundColor = "";
+  document.getElementById("a1Label").style.color = "black";
+  document.getElementById("a1").checked = false;
+  document.getElementById("a2Label").style.backgroundColor = "";
+  document.getElementById("a2Label").style.color = "black";
+  document.getElementById("a2").checked = false;
+  document.getElementById("a3Label").style.backgroundColor = "";
+  document.getElementById("a3Label").style.color = "black";
+  document.getElementById("a3").checked = false;
+  document.getElementById("a4Label").style.backgroundColor = "";
+  document.getElementById("a4Label").style.color = "black";
+  document.getElementById("a4").checked = false;
+  //reset everything
+
   var randInt = getRandomNum(flashcardDeck.length);
 
   while(randInt == currentCard)
@@ -93,6 +107,7 @@ function flipCard()
   setTimeout(myTimeout, 1100);
   setTimeout(myOtherTimeout, 3000);
   //I'm using timeouts to delay these functions so animation looks more natural
+  checkAnswer();
 }
 
 function myTimeout()
@@ -154,5 +169,43 @@ function shuffleAnswers()
   document.getElementById("a2Label").innerHTML = answerArray[1];
   document.getElementById("a3Label").innerHTML = answerArray[2];
   document.getElementById("a4Label").innerHTML = answerArray[3];
+
+}
+
+function checkAnswer()
+{
+  var choice = [ document.getElementById("a1Label").innerHTML,
+                document.getElementById("a2Label").innerHTML,
+                document.getElementById("a3Label").innerHTML,
+                document.getElementById("a4Label").innerHTML
+              ];
+  var pick = [ document.getElementById("a1").checked,
+                document.getElementById("a2").checked,
+                document.getElementById("a3").checked,
+                document.getElementById("a4").checked
+              ];
+
+  var label = ["a1Label", "a2Label", "a3Label", "a4Label"];
+
+  var answer = flashcardDeck[currentCard].name;
+
+  var i = 0;
+  while(pick[i] == false)
+  {
+    i++;
+  }
+
+  if (choice[i] == answer)
+  {
+    document.getElementById(label[i]).style.backgroundColor = "green";
+    document.getElementById(label[i]).style.color = "white";
+  }
+  else
+  {
+      document.getElementById(label[i]).style.backgroundColor = "red";
+      document.getElementById(label[i]).style.color = "white";
+  }
+
+
 
 }
