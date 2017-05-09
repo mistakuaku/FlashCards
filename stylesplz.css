@@ -114,10 +114,14 @@ https://www.w3schools.com/css/tryit.asp?filename=trycss_image_text_center2 */
 
   .centerText {
     position: absolute;
-    top: 60%;
-    left: 50%;
+    top: 30%;
+    left: 60%;
     visibility: hidden;
     font-size: 50px;
+  }
+
+  span{
+    font-size: 30px;
   }
 
 }
