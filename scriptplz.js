@@ -99,14 +99,29 @@ function shuffleCards()
 
 function flipCard()
 {
-  document.getElementById("cardImage").className = "animateImg";
-  document.getElementById("next").disabled = true;
-  document.getElementById("flip").disabled = true;
-  //the buttons gets disabled to prevent problems with the picture not showing
-  //if the user clicks next before the timeouts are finished
-  setTimeout(myTimeout, 1100);
-  setTimeout(myOtherTimeout, 3000);
-  //I'm using timeouts to delay these functions so animation looks more natural
+  var chkAnime = checkAnimations(); //checks if they want the animation to play
+
+  if(chkAnime == 1) //if they do play the animation
+  {
+    document.getElementById("cardImage").className = "animateImg";
+    document.getElementById("next").disabled = true;
+    document.getElementById("flip").disabled = true;
+    //the buttons gets disabled to prevent problems with the picture not showing
+    //if the user clicks next before the timeouts are finished
+    setTimeout(myTimeout, 1100);
+    setTimeout(myOtherTimeout, 3000);
+    //I'm using timeouts to delay these functions so animation looks more natural
+  }
+  else //else don't play any animations just show the answer
+  {
+    document.getElementById("flip").disabled = true;
+    var currentName = flashcardDeck[currentCard].name;
+    document.getElementById("name").innerHTML = currentName;
+    document.getElementById("cardName").style.visibility = "visible";
+    document.getElementById("cardImage").style.opacity = "0";
+    document.getElementById("next").disabled = false;
+  }
+
   checkAnswer();
 }
 
@@ -206,6 +221,18 @@ function checkAnswer()
       document.getElementById(label[i]).style.color = "white";
   }
 
+}
 
+function checkAnimations()
+{
+  var anime = document.getElementById("animeCheck").checked;
 
+  if (anime == true)
+  {
+    return 1;
+  }
+  else
+  {
+    return 2;
+  }
 }
