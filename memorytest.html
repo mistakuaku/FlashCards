@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<!--Created by Patrick McGee-->
+<html lang="en-us">
+  <head charset="utf-8">
+    <title>FlashCards</title>
+    <link rel="stylesheet" type="text/css" href="stylesplz.css">
+    <script src="scriptplz.js"> </script>
+  </head>
+
+  <body onload="shuffleCards()">
+
+  <div>
+    <div class="header"><h1 align="center">Guess Who</h1></div>
+
+    <div class="row">
+      <div class="col"></div>
+      <div class="col2">
+        <img src="" id="cardImage" class="" alt="" height="300" width="300">
+        <a href="" id="source">[Source]</a> <br><br>
+        &nbsp;&nbsp;&nbsp;
+        <button id="flip" class="button" onclick="flipCard()">Flip</button>
+        &nbsp;<button id="next" class="button" onclick="shuffleCards()">Next</button>
+      </div>
+      <div class="centerText"  id="cardName"><p id="name">Name</p></div>
+      <div class="col"></div>
+    </div>
+
+
+<!--
+    <div class="row">
+      <div class="col"></div>
+      <div class="col2">
+        &nbsp;&nbsp;&nbsp;
+        <button id="flip" class="button" onclick="flipCard()">Flip</button>
+        &nbsp;<button id="next" class="button" onclick="shuffleCards()">Next</button>
+      </div>
+    </div>
+-->
+  </div>
+
+  </body>
+</html>

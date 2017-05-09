@@ -7,17 +7,29 @@
     <script src="scriptplz.js"> </script>
   </head>
 
-  <body onload="shuffleCards()">
+  <body>
 
   <div>
-    <div class="header"><h1 align="center">Guess Who</h1></div>
+    <div class="header"><h1 align="center">Flashcards</h1></div>
 
     <div class="row">
       <div class="col"></div>
       <div class="col2">
-        <img src="" id="cardImage" class="" alt="" height="300" width="300">
+        <p>Welcome to the Flashcard splash screen! This site is designed to help
+        users who are looking to remember information using a similar technique
+        as traditional notecards aka flashcards.</p>
+        <p>There are two different styles of play on this site. The first style is called
+        traditional which is exactly like traditional flashcards where you have
+        one side with a question and on the otherside of the card is the answer.
+        This style is great when you want to study your cards while on your phone
+        because it is based purely on memory and you don't have to type anything
+        to verify if your answer is correct you just check it and verify with yourself
+        if you got it correct or not.</p>
+        <p>The second style of play is called enhanced mode. This style is a bit easier
+        as you get a pool of possible answers with only one correct answer which
+        you then submit and based on your selection the site will verify if you
+        got it correct or not.</p>
       </div>
-      <div class="centerText"  id="cardName"><p id="name">Name</p></div>
       <div class="col"></div>
     </div>
 
@@ -26,9 +38,11 @@
     <div class="row">
       <div class="col"></div>
       <div class="col2">
-        &nbsp;&nbsp;&nbsp;
-        <button id="flip" class="button" onclick="flipCard()">Flip</button>
-        &nbsp;<button id="next" class="button" onclick="shuffleCards()">Next</button>
+        <p>Please choose which flashcard type you would like to play then click
+        on the 'Go!' button:</p>
+        <input type="radio" id="traditional" checked="true"> Traditional <br>
+        <input type="radio" id="enhanced"> Enhanced <br><br>
+        <a href="memorytest.html"><button class="button" onclick="getGameMode">Go!</button></a>
       </div>
     </div>
 

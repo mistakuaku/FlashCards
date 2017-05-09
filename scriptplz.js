@@ -4,43 +4,43 @@
 var flashcardDeck = [
   {name:"Julie",
    picture: "https://i.imgur.com/FE6AnFP.jpg?2",
-   //Photo credit: "https://www.pexels.com/photo/portrait-of-smiling-girl-against-white-background-253758/"
+   credit: "https://www.pexels.com/photo/portrait-of-smiling-girl-against-white-background-253758/"
   },
   {name:"Alex",
    picture: "https://i.imgur.com/QKKU9H0.jpg?3",
-   //Photo credit: "https://www.pexels.com/photo/man-wearing-blue-denim-buttons-up-long-sleeve-and-blace-frame-eyelgasses-26939/"
+   credit: "https://www.pexels.com/photo/man-wearing-blue-denim-buttons-up-long-sleeve-and-blace-frame-eyelgasses-26939/"
   },
   {name:"Andy",
    picture: "https://i.imgur.com/rVH2Uh7.jpg?1",
-   //Photo credit: "https://www.pexels.com/photo/portrait-of-young-man-251829/"
+   credit: "https://www.pexels.com/photo/portrait-of-young-man-251829/"
   },
   {name:"Janet",
    picture: "https://i.imgur.com/VzNSV0D.jpg?1",
-   //Photo credit: "https://www.pexels.com/photo/adult-beautiful-blonde-blur-324658/"
+   credit: "https://www.pexels.com/photo/adult-beautiful-blonde-blur-324658/"
   },
   {name:"Susan",
    picture: "https://i.imgur.com/KHXEVms.jpg?1",
-   //Photo credit: "https://www.pexels.com/photo/blonde-haired-woman-in-blue-shirt-y-27411/"
+   credit: "https://www.pexels.com/photo/blonde-haired-woman-in-blue-shirt-y-27411/"
   },
   {name:"Jennifer",
    picture: "https://i.imgur.com/3kYr7uK.jpg?1",
-   //Photo credit: "https://www.pexels.com/photo/woman-in-black-blazer-jacket-on-wooden-bench-206559/"
+   credit: "https://www.pexels.com/photo/woman-in-black-blazer-jacket-on-wooden-bench-206559/"
   },
   {name:"Jon",
    picture: "https://i.imgur.com/IP6ugR9.jpg?1",
-   //Photo credit: "https://www.pexels.com/photo/man-in-red-and-blue-v-neck-shirt-101584/"
+   credit: "https://www.pexels.com/photo/man-in-red-and-blue-v-neck-shirt-101584/"
   },
   {name:"Mark",
    picture: "https://i.imgur.com/pLkvi5A.jpg?1",
-   //Photo credit: "https://www.pexels.com/photo/man-young-happy-smiling-91227/"
+   credit: "https://www.pexels.com/photo/man-young-happy-smiling-91227/"
   },
   {name:"Mike",
    picture: "https://i.imgur.com/2htM5ZM.jpg?1",
-   //Photo credit: "https://www.pexels.com/photo/man-sitting-in-blue-dress-shirt-infront-of-message-board-212092/"
+   credit: "https://www.pexels.com/photo/man-sitting-in-blue-dress-shirt-infront-of-message-board-212092/"
   },
   {name:"Steve",
    picture: "https://i.imgur.com/cx82Hqd.jpg?1",
-   //Photo credit: "https://www.pexels.com/photo/man-in-beanie-holding-his-shoulder-193355/"
+   credit: "https://www.pexels.com/photo/man-in-beanie-holding-his-shoulder-193355/"
   }
 ];
 
@@ -52,10 +52,10 @@ var currentCard;
 
 function shuffleCards()
 {
-  document.getElementById("cardName").style.visibility = "hidden";
-  document.getElementById("cardImage").style.opacity = "1";
-  document.getElementById("cardImage").className = "";
-  document.getElementById("flip").disabled = false;
+  document.getElementById("cardName").style.visibility = "hidden"; //name overlay visibility
+  document.getElementById("cardImage").style.opacity = "1"; //picture visibility
+  document.getElementById("cardImage").className = ""; //reset animation
+  document.getElementById("flip").disabled = false; //reset clickability of flip
 
   var len = flashcardDeck.length;
   var randInt = Math.floor(Math.random() * len);
@@ -68,6 +68,7 @@ function shuffleCards()
   currentCard = randInt;
   document.getElementById("cardImage").src = flashcardDeck[randInt].picture;
   document.getElementById("cardImage").alt = flashcardDeck[randInt].name;
+  document.getElementById("source").href = flashcardDeck[randInt].credit;
   //don't go cheating now with the alt text. It only works against yourself ;)
 
 }
@@ -95,4 +96,20 @@ function myOtherTimeout()
 {
   document.getElementById("cardImage").style.opacity = "0";
   document.getElementById("next").disabled = false;
+}
+
+function getGameMode()
+{
+  var checkTraditional = document.getElementById("traditional").checked;
+  var checkEnhanced = document.getElementById("enahanced").checked;
+
+  if (checkTraditional === true)
+  {
+    sessionStorage.gameType = 1;
+  }
+  else if (checkEnhanced === true)
+  {
+    sessionStorage.gameType = 2;
+  }
+
 }

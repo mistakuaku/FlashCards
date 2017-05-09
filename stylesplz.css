@@ -2,6 +2,11 @@
   box-sizing: border-box;
 }
 
+body {
+  font-family: Calibri, Helvetica, Arial, sans-serif;
+  background-color: lightgrey;
+}
+
 .row::after{
   content: "";
   clear: both;
@@ -18,8 +23,8 @@
   width: 33.33%;
   float: left;
   padding: 15px;
-  //border: 1px solid black;
-  position: relative;
+  border: 1px solid grey;
+  background-color: white;
 }
 
 .col2 img {
@@ -29,10 +34,16 @@
 
 .header{
   padding: 15px;
+  font-size: 150%;
+
 }
 
 /*The above code is inspired by W3Schools Responsive Grid Layout
 Found here:https://www.w3schools.com/css/css_rwd_grid.asp */
+
+a:link{
+  text-decoration: none;
+}
 
 .button {
   padding: 15px 125px;
