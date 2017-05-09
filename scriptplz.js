@@ -147,8 +147,9 @@ function shuffleAnswers()
   }
 
   answerArray.sort(function(a, b){return 0.5 - Math.random()});
-  //sort array randomly inspired by: https://www.w3schools.com/js/js_array_sort.asp
-
+  /*sort array randomly inspired by: https://www.w3schools.com/js/js_array_sort.asp
+  it is to make the answers appear random on the screen and to preven people
+  from knowing that the answer is always in a certain position*/
   document.getElementById("a1Label").innerHTML = answerArray[0];
   document.getElementById("a2Label").innerHTML = answerArray[1];
   document.getElementById("a3Label").innerHTML = answerArray[2];
