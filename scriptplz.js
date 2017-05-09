@@ -57,12 +57,11 @@ function shuffleCards()
   document.getElementById("cardImage").className = ""; //reset animation
   document.getElementById("flip").disabled = false; //reset clickability of flip
 
-  var len = flashcardDeck.length;
-  var randInt = Math.floor(Math.random() * len);
+  var randInt = getRandomNum(flashcardDeck.length);
 
   while(randInt == currentCard)
   {
-    randInt = Math.floor(Math.random() * len);
+    randInt = getRandomNum(flashcardDeck.length);
   }
 
   currentCard = randInt;
@@ -70,6 +69,17 @@ function shuffleCards()
   document.getElementById("cardImage").alt = flashcardDeck[randInt].name;
   document.getElementById("source").href = flashcardDeck[randInt].credit;
   //don't go cheating now with the alt text. It only works against yourself ;)
+
+  shuffleAnswers();
+
+  if(Number(sessionStorage.gameType) == 2)
+  {
+    //Do nothing right now
+  }
+  else if(Number(sessionStorage.gameType) == 1)
+  {
+    document.getElementById("type2").style.display = "none";
+  }
 
 }
 
@@ -101,7 +111,7 @@ function myOtherTimeout()
 function getGameMode()
 {
   var checkTraditional = document.getElementById("traditional").checked;
-  var checkEnhanced = document.getElementById("enahanced").checked;
+  var checkEnhanced = document.getElementById("enhanced").checked;
 
   if (checkTraditional === true)
   {
@@ -111,5 +121,37 @@ function getGameMode()
   {
     sessionStorage.gameType = 2;
   }
+
+}
+
+function getRandomNum(len)
+{
+  return Math.floor(Math.random() * len);
+}
+
+function shuffleAnswers()
+{
+  var correctAnswer = flashcardDeck[currentCard].name;
+  var answerArray = [correctAnswer];
+  var previous = [currentCard]; //an arry to keep track of what numbers I have pulled
+  for(i=1; i < 4; i++)
+  {
+    var randNum = getRandomNum(flashcardDeck.length);
+    while(randNum == currentCard || randNum == previous[i-1] || randNum == previous[i-2])
+    {
+      randNum = getRandomNum(flashcardDeck.length);
+    }
+    previous[i] = randNum;
+    answerArray.push(flashcardDeck[randNum].name);
+    //This basically makes sure each 4 numbers are different
+  }
+
+  answerArray.sort(function(a, b){return 0.5 - Math.random()});
+  //sort array randomly inspired by: https://www.w3schools.com/js/js_array_sort.asp
+
+  document.getElementById("a1Label").innerHTML = answerArray[0];
+  document.getElementById("a2Label").innerHTML = answerArray[1];
+  document.getElementById("a3Label").innerHTML = answerArray[2];
+  document.getElementById("a4Label").innerHTML = answerArray[3];
 
 }

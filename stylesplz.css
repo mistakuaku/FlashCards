@@ -45,6 +45,25 @@ a:link{
   text-decoration: none;
 }
 
+ul {
+  list-style-type: none;
+}
+
+h1 {
+  text-align: center;
+}
+
+h3 {
+  background-color: lightgrey;
+  color: black;
+  text-align: center;
+}
+
+h3:hover {
+  background-color: green;
+  color: white;
+}
+
 .button {
   padding: 15px 125px;
   display: inline-block;

@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <!--Created by Patrick McGee-->
 <html lang="en-us">
-  <head charset="utf-8">
+  <head>
+    <meta charset="utf-8">
     <title>FlashCards</title>
     <link rel="stylesheet" type="text/css" href="stylesplz.css">
     <script src="scriptplz.js"> </script>
@@ -10,13 +11,21 @@
   <body onload="shuffleCards()">
 
   <div>
-    <div class="header"><h1 align="center">Guess Who</h1></div>
+    <div class="header"><h1>Guess Who</h1></div>
 
     <div class="row">
       <div class="col"></div>
       <div class="col2">
         <img src="" id="cardImage" class="" alt="" height="300" width="300">
         <a href="" id="source">[Source]</a> <br><br>
+        <ul id="type2">
+          <li>Choose the correct one then select flip:</li>
+          <li>&nbsp;</li>
+          <li><input type="radio" name="answer" id="a1"><span id="a1Label"></span></li>
+          <li><input type="radio" name="answer" id="a2"><span id="a2Label"></span></li>
+          <li><input type="radio" name="answer" id="a3"><span id="a3Label"></span></li>
+          <li><input type="radio" name="answer" id="a4"><span id="a4Label"></span></li>
+        </ul>
         &nbsp;&nbsp;&nbsp;
         <button id="flip" class="button" onclick="flipCard()">Flip</button>
         &nbsp;<button id="next" class="button" onclick="shuffleCards()">Next</button>

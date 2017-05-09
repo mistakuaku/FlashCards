@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <!--Created by Patrick McGee-->
 <html lang="en-us">
-  <head charset="utf-8">
+  <head>
+    <meta charset="utf-8">
     <title>FlashCards</title>
     <link rel="stylesheet" type="text/css" href="stylesplz.css">
     <script src="scriptplz.js"> </script>
@@ -10,7 +11,7 @@
   <body>
 
   <div>
-    <div class="header"><h1 align="center">Flashcards</h1></div>
+    <div class="header"><h1>Flashcards</h1></div>
 
     <div class="row">
       <div class="col"></div>
@@ -40,9 +41,9 @@
       <div class="col2">
         <p>Please choose which flashcard type you would like to play then click
         on the 'Go!' button:</p>
-        <input type="radio" id="traditional" checked="true"> Traditional <br>
-        <input type="radio" id="enhanced"> Enhanced <br><br>
-        <a href="memorytest.html"><button class="button" onclick="getGameMode">Go!</button></a>
+        <input type="radio" name="gType" id="traditional" onclick="getGameMode()"> Traditional <br>
+        <input type="radio" name="gType" id="enhanced" onclick="getGameMode()"> Enhanced <br><br>
+        <a href="memorytest.html"><h3>Go!</h3></a>
       </div>
     </div>
 
